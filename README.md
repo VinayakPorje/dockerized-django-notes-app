@@ -1,30 +1,79 @@
-# Simple Notes App for TWS Community
-This is a simple notes app built with React and Django.
+# 🐳 Dockerized Django Notes App
 
-## Requirements
-1. Python 3.9
-2. Node.js
-3. React
+## 📌 Overview
 
-## Installation
-1. Clone the repository
+This project demonstrates a production-style **multi-container Docker deployment** of a Django Notes Application using:
+
+- Nginx (Reverse Proxy)
+- Django (Backend)
+- MySQL (Database)
+- Docker Compose
+- AWS EC2 (Linux Deployment)
+
+This repository focuses on Docker architecture, container networking, and cloud deployment.
+
+---
+
+## 🏗️ Architecture
+
+Client → Nginx (Port 80 - Public) → Django (Port 8000 - Internal) → MySQL (Port 3306 - Internal)
+
+- Only Port 80 is publicly accessible.
+- Django runs internally on port 8000.
+- MySQL runs internally on port 3306.
+- All containers communicate via a custom Docker network.
+
+---
+
+## 🧱 Services & Ports
+
+| Service | Role | Port |
+|----------|------|------|
+| Nginx | Reverse Proxy | 80 |
+| Django | Application Server | 8000 |
+| MySQL | Database | 3306 |
+
+---
+
+## 🚀 How to Run
+
+1. Install Docker and Docker Compose
+2. Clone the repository
+3. Run:
+
+```bash
+docker-compose up --build -d
 ```
-git clone https://github.com/LondheShubham153/django-notes-app.git
-```
 
-2. Build the app
-```
-docker build -t notes-app .
-```
+4. Access the app:
 
-3. Run the app
-```
-docker run -d -p 8000:8000 notes-app:latest
-```
+http://<EC2_PUBLIC_IP>
 
-## Nginx
+---
 
-Install Nginx reverse proxy to make this application available
+## 🧠 DevOps Concepts Demonstrated
 
-`sudo apt-get update`
-`sudo apt install nginx`
+- Multi-container Docker setup
+- Reverse proxy configuration using Nginx
+- Docker networking between services
+- Persistent database storage using volumes
+- Cloud deployment on AWS EC2 (Linux)
+
+---
+
+## 📦 Tech Stack
+
+- Python
+- Django
+- MySQL
+- Nginx
+- Docker
+- Docker Compose
+- AWS EC2
+
+---
+
+## 👨‍💻 Author
+
+Vinayak Porje  
+DevOps | Cloud 
