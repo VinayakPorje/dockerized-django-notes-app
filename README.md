@@ -5,10 +5,10 @@
 This project demonstrates a production-style **multi-container Docker deployment** of a Django Notes Application using:
 
 - Nginx (Reverse Proxy)
-- Django (Backend)
+- Django 
 - MySQL (Database)
 - Docker Compose
-- AWS EC2 (Linux Deployment)
+- AWS EC2
 
 This repository focuses on Docker architecture, container networking, and cloud deployment.
 
